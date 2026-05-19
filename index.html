@@ -1,34 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pixel Art Maker</title>
-  <link rel="stylesheet" href="src/css/style.css">
+    <title>Pixel Art Maker</title>
+    <link rel="stylesheet" href="/src/css/style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Pixel Art Maker</h1>
+    <div class="container">
+        <h1>Pixel Art Maker</h1>
+        
+        <!-- Setup -->
+        <div id="setup" class="setup">
+            <label for="gridSize">Grid Size (e.g. 16 for 16×16):</label>
+            <input type="number" id="gridSize" value="32" min="8" max="64" step="8">
+            <button id="createBtn">Create Grid</button>
+        </div>
 
-    <div class="toolbar">
-      <input type="color" id="colorPicker" value="#000000">
-      <button id="eraser">Eraser</button>
-      <button id="clear">Clear Grid</button>
-      <button id="export">Export PNG</button>
+        <!-- Toolbar -->
+        <div id="toolbar" class="toolbar hidden">
+            <div class="tools">
+                <button id="pencilBtn" class="tool active">✏️ Pencil</button>
+                <button id="eraserBtn" class="tool">🧼 Eraser</button>
+                
+                <div class="color-group">
+                    <label>Color:</label>
+                    <input type="color" id="colorPicker" value="#000000">
+                    <div id="currentColor" class="current-color"></div>
+                </div>
+                
+                <button id="clearBtn">Clear Grid</button>
+                <button id="exportBtn">Export PNG</button>
+                <button id="newBtn">New Grid</button>
+            </div>
+            
+            <div class="info">
+                <span>Size: <span id="sizeDisplay">32×32</span></span>
+            </div>
+        </div>
+
+        <!-- Grid Container -->
+        <div id="gridContainer" class="grid-container"></div>
     </div>
 
-    <div class="grid-container">
-      <div id="grid" class="grid"></div>
-    </div>
-
-    <div class="size-control">
-      <label>Grid Size: 
-        <input type="range" id="sizeSlider" min="8" max="64" value="16" step="8">
-        <span id="sizeValue">16x16</span>
-      </label>
-    </div>
-  </div>
-
-  <script src="dist/script.js"></script>
+    <script src="/dist/index.js"></script>
 </body>
 </html>
