@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Art Maker</title>
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Pixel Art Maker</h1>
+
+    <div class="toolbar">
+      <input type="color" id="colorPicker" value="#000000">
+      <button id="eraser">Eraser</button>
+      <button id="clear">Clear Grid</button>
+      <button id="export">Export PNG</button>
+    </div>
+
+    <div class="grid-container">
+      <div id="grid" class="grid"></div>
+    </div>
+
+    <div class="size-control">
+      <label>Grid Size: 
+        <input type="range" id="sizeSlider" min="8" max="64" value="16" step="8">
+        <span id="sizeValue">16x16</span>
+      </label>
+    </div>
+  </div>
+
+  <script src="dist/script.js"></script>
+</body>
+</html>
